@@ -289,4 +289,12 @@ footer {
   transform: translateY(0);
 }
 
+.modal p {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
+
 /*# sourceMappingURL=styles.css.map */

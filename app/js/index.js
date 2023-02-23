@@ -29,12 +29,12 @@ el.innerHTML = recipeName;
 
 var modal = document.querySelector(".modal");
 var modalOuter = document.querySelector(".modal-outer");
-var modalContent = document.querySelector(".modal p");
 
-const betaOrig = modal.querySelector("p").innerText;
-const pickIt = "You clicked the Pick It button!";
-const cookIt = "You clicked the Cook It button!";
-const storeIt = "You clicked the Store It button!";
+const betaTxt = document.querySelector("#betaText");
+const pickTxt = document.querySelector("#pickText");
+const cookTxt = document.querySelector("#cookText");
+const storeTxt = document.querySelector("#storeText");
+const modalTxt = document.querySelectorAll(".modal p");
 
 function showPopover(event) {
   if (
@@ -42,17 +42,21 @@ function showPopover(event) {
       ".beta, .closer, .nav-pickit a, .nav-cookit a, .nav-storeit a"
     )
   ) {
-    console.log(event.target);
     return;
   }
+
+  for (let m of modalTxt) {
+    m.classList.remove("show");
+  }
+
   if (event.target.matches(".nav-pickit a")) {
-    modalContent.innerText = pickIt;
+    pickTxt.classList.add("show");
   } else if (event.target.matches(".nav-cookit a")) {
-    modalContent.innerText = cookIt;
+    cookTxt.classList.add("show");
   } else if (event.target.matches(".nav-storeit a")) {
-    modalContent.innerText = storeIt;
+    storeTxt.classList.add("show");
   } else {
-    modalContent.innerText = betaOrig;
+    betaTxt.classList.add("show");
   }
 
   modalOuter.classList.toggle("open");

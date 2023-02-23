@@ -49,3 +49,11 @@
 .modal-outer.open .modal {
   transform: translateY(0);
 }
+
+.modal p {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
