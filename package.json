@@ -6,8 +6,8 @@
   "scripts": {
     "server": "browser-sync app -w",
     "sass": "sass  scss/styles.scss app/css/styles.css --watch --source-map",
-    "rollup": "rollup src/index.js --file app/js/bundle.js --format iife --watch",
-    "start": "npm run server | npm run sass | npm run rollup"
+    "build": "rollup src/index.js --file app/js/bundle.js --format iife --watch",
+    "start": "npm run server | npm run sass | npm run build"
   },
   "keywords": [],
   "author": "",
